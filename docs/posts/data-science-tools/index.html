@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Randall Lee">
+<meta name="dcterms.date" content="2026-01-14">
 
-<title>The Data Science Blog</title>
+<title>Reproducible Data Science Tools Demystified – The Data Science Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +69,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">The Data Science Blog</span>
     </a>
   </div>
@@ -150,11 +92,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/randallxlee"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -168,72 +110,108 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">The Data Science Blog</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Reproducible Data Science Tools Demystified</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">tutorials</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Randall Lee </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 14, 2026</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHV0b3JpYWxz">tutorials <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="dHV0b3JpYWxz" data-listing-date-sort="1768377600000" data-listing-file-modified-sort="1768519814520" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="967">
-<div class="thumbnail"><a href="./posts/data-science-tools/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/data-science-tools/Workflow.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/data-science-tools/index.html" class="no-external">Reproducible Data Science Tools Demystified</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHV0b3JpYWxz'); return false;">tutorials</div>
-
+<section id="the-it-works-on-my-machine-problem" class="level1">
+<h1>The ‘It Works on My Machine’ Problem</h1>
+<p>Have you ever encountered the problem when trying to run a data science report written by a colleague and you run into error after error, and all they say is: “But it runs on my computer!”</p>
+<p>If you’ve worked in data science long enough, chances are you’ve ran into this exact problem. One missing package, a mismatched version, or some mysterious dependency issue is all it takes to turn an otherwise simple task into a source of frustration. Suddenly, getting the code to run feels harder than doing the original analysis.</p>
+<p>And this isn’t just a small inconvenience, it points to a much bigger reproducibility problem in data science, at a time when the field is placing greater emphasis on transparent, repeatable, and verifiable workflows.</p>
+<section id="why-reproducibility-is-critical-in-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="why-reproducibility-is-critical-in-data-science">Why Reproducibility Is Critical in Data Science</h2>
+<p>So, let’s demystify what reproducibility actually means! At its core, reproducibility is about making sure that someone else (including your future self) can run your entire analysis without any ambiguity and get consistent results every time.</p>
+<p>Reproducibility is critical in data science because data science results are rarely used in isolation. They are often used to make key decisions, guide policy changes and power machine learning systems. If results cannot be reproduced, it becomes difficult to trust the conclusions drawn from them. Furthermore, in collaborative settings, a reproducible workflow ensures that anyone in the team is able to pick up the project and build on it without having to reverse-engineer the entire process or make assumptions about what steps were taken.</p>
+</section>
+<section id="the-reproducible-data-science-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-reproducible-data-science-workflow">The reproducible data science workflow</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Workflow.png" class="img-fluid figure-img"></p>
+<figcaption>Data Science workflow diagram</figcaption>
+</figure>
 </div>
-<div class="delink listing-description"><a href="./posts/data-science-tools/index.html" class="no-external">
-Have you ever encountered the problem when trying to run a data science report written by a colleague and you run into error after error, and all they say is: “But it runs…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/data-science-tools/index.html" class="no-external">
-<div class="listing-date">
-Jan 14, 2026
-</div>
-<div class="listing-author">
-Randall Lee
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<p>A basic reproducible data science workflow is built around a few core elements:</p>
+<ul>
+<li><strong>Code</strong>: The Analysis, Models, and Scripts<br>
+</li>
+<li><strong>Data</strong>: Consistent data inputs and sources<br>
+</li>
+<li><strong>Environment</strong>: Libraries, Dependencies, and System setup<br>
+</li>
+<li><strong>Documentation</strong>: Clear instructions on how to re-run the analysis</li>
+</ul>
+<p>The good news is that while challenges in reproducibility can feel daunting, they are entirely solvable and the tools to do so are already available.</p>
+<section id="code-the-analysis-models-and-scripts" class="level3">
+<h3 class="anchored" data-anchor-id="code-the-analysis-models-and-scripts">Code: The Analysis, Models, and Scripts</h3>
+<p>Code is rarely static. As analyses evolve, models get refined, and bugs get discovered, your scripts change over time. Without a way to track those changes, it quickly becomes unclear which version of the code produced which results.</p>
+<p>This is where version control comes in.</p>
+<p>Tools like <a href="https://git-scm.com/">Git</a> are essential for a reproducible workflow. Git allows you track changes to your code, roll back to earlier versions when needed, and collaborate with others without overwriting each other’s work. Platforms such as <a href="https://github.com/">GitHub</a> build on this by making it easy to share repositories, review changes, and release versions of your analysis at different points in time.</p>
+</section>
+<section id="data-consistent-data-inputs-and-sources" class="level3">
+<h3 class="anchored" data-anchor-id="data-consistent-data-inputs-and-sources">Data: Consistent data inputs and sources</h3>
+<p>Even perfectly written scripts and analysis can lead to inconsistent or misleading results if the data isn’t consistent. If the data from your source changes, or it’s unclear exactly which snapshot was used, results can quickly become unpredictable or impossible to replicate. That is why versioning your data is just as important as versioning your code. Tools like <a href="https://dvc.org/">Data Version Control</a> (DVC) let you track changes, roll back when needed, and make sure all your collaborators work with the same inputs.</p>
+</section>
+<section id="environment-libraries-dependencies-and-system-setup" class="level3">
+<h3 class="anchored" data-anchor-id="environment-libraries-dependencies-and-system-setup">Environment: Libraries, Dependencies, and System setup</h3>
+<p>One of the most common reasons for the dreaded “it works on my machine” is usually because of a mismatch in package dependencies. Different versions of libraries can not only throw errors when used together, but more concerningly, silently produce different results without any warning.</p>
+<p>This is where environment files come in. Tools like environment.yml (with Conda) or requirements.txt (with Pip) files allow you to explicitly specify the package versions and their dependencies used when initially running the analysis. These files create a blueprint that anyone who picks up your project can use to recreate the environment and install the required packages used to run your analysis.</p>
+<p>For an even more robust solution, <a href="https://www.docker.com/">Docker</a> can be used to package your entire runtime environment including the operating system itself. This means that your environment becomes completely portable and you can run the same analysis on any machine. This helps to avoid any specific operating system bugs, and be confident that your results will remain consistent and fully reproducible irrespective of physical hardware.</p>
+</section>
+<section id="documentation-clear-instructions-on-how-to-re-run-the-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="documentation-clear-instructions-on-how-to-re-run-the-analysis">Documentation: Clear instructions on how to re-run the analysis</h3>
+<p>At the core of reproducibility is documentation. No matter how perfect your code, data, or environment may be, reproducibility can fail if no one knows how to bring it all together. At a minimum, every data science project should include a README with clear, step-by-step instructions for reproducing the analysis. This should cover the order to run the scripts in, which files to use as well as any key parameters or settings. Additionally, documentation should evolve alongside the project. As code changes or new data sources are introduced, the README should be updated to reflect those changes.</p>
+<p>Effective documentation isn’t just a list of steps, it explains the reasoning behind them. Sharing details about data sources, assumptions, and potential pitfalls makes it simple for anyone, including collaborators or viewers of your report to follow your work without confusion.</p>
+</section>
+</section>
+<section id="building-trust-in-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="building-trust-in-data-science">Building trust in Data Science</h2>
+<p>Reproducibility isn’t about adding extra steps to an already complex process. It is about making sure your data science projects are reliable, shareable, and future-proof. By properly managing your code, data, environment, and documentation, you make it possible for others, including your future self to rerun your analysis without any frustration or guesswork.</p>
+<p>Tools like Git and GitHub help track changes, versioned data keeps data inputs consistent and reliable, environment files and Docker eliminate dependency issues, and a clear README ties everything together. Used together, these practices turn “it works on my machine” into “it works on all machines.”</p>
+<p>Ultimately, reproducibility fosters trust. It streamlines collaboration, simplifies debugging, and strengthens the credibility of your results which is exactly the standards quality data science aims for.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
