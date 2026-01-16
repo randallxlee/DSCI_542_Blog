@@ -59,6 +59,14 @@ At the core of reproducibility is documentation. No matter how perfect your code
 
 Effective documentation isn’t just a list of steps, it explains the reasoning behind them. Sharing details about data sources, assumptions, and potential pitfalls makes it simple for anyone, including collaborators or viewers of your report to follow your work without confusion.
 
+## Automating the Workflow
+
+So how do we automate this process? Even with clean code, consistent data, and a well-defined environment file, things can still fall apart if steps are ran manually and out of order.
+
+This is where Makefiles come in. A Makefile is a simple way to define your workflow and the dependencies between each step, allowing you to automate the entire analysis pipeline. For example, you can require that datasets are merged and filtered before running exploratory analysis, and that exploratory results are finalized before fitting any models.
+
+With a single command like `make all`, the full workflow runs in the correct order every time. This not only reduces human error but also makes your analysis much easier to reproduce. In collaborative settings, Makefiles are especially helpful because they clearly document the workflow and remove any assumptions about how the analysis should be run.
+
 ## Building trust in Data Science
 
 Reproducibility isn’t about adding extra steps to an already complex process. It is about making sure your data science projects are reliable, shareable, and future-proof. By properly managing your code, data, environment, and documentation, you make it possible for others, including your future self to rerun your analysis without any frustration or guesswork.
